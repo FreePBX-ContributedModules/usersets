@@ -34,7 +34,8 @@ function usersets_get_config($engine) {
 					$ext->add($id, 's', '', new ext_macro('hangupcall'));
 					$ext->add($id, 's', 'needauth', new ext_answer());
 					$ext->add($id, 's', '', new ext_wait(1));
-					$ext->add($id, 's', '', new ext_vmauthenticate('${CALLERID(number)}'));
+					$ext->add($id, 's', '', new ext_macro('get-vmcontext','${CALLERID(number)}'));
+					$ext->add($id, 's', '', new ext_vmauthenticate('${CALLERID(number)}@${VMCONTEXT}'));
 					$ext->add($id, 's', 'trusted', new ext_noop('${CALLERID(number)} access approved'));
 
 				}
