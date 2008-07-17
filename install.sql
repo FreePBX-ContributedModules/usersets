@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS usersets ( usersets_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY , description VARCHAR( 50 ) , deptname VARCHAR( 50 ) , trustlist LONGTEXT , authlist LONGTEXT , used_by VARCHAR( 255 ));
